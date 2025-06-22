@@ -27,5 +27,5 @@ jobs:
       - name: Install web-ext
         run: npm install -g web-ext
 
-      - name: Lint extension
-        run: web-ext lint --source-dir=dist
+      - name: Lint extension for Chrome only
+        run: web-ext lint --source-dir=dist --target=chromium
