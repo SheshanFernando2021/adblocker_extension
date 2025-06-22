@@ -20,7 +20,7 @@
   align-items: flex-start;
   max-width: 100%;
   box-sizing: border-box;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .radio-group input[type="radio"] {

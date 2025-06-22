@@ -9,5 +9,6 @@
     "action": {
         "default_popup": "js/index.html",
         "default_title": "AdBlocker Extension"
-    }
+    },
+    key:"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwMpGbghCpJzUFz1iFTEq5ER/WvcxAIpQqI4Z8ppK8hnxR2dMWqgk/p21ZxXMlETjtItLj666l/tYfYLr1MoAx6ELP6NWcMDb9Xk/n2+bi8oFr7WPoPs9bDvF5zE+FBnrIUvufjkdWtBU0IO1IrcZoazlFxf1s/cXkeWGDX8Bp7+DSkxrddHNcaf/dKhKw5F/30cftABu9krOrm0KbVQLntzILnwk3EsX8KaPJb3/HN8G+mYkpLAbFxdjvzFBkcSJDsDjs9OtRomd+Kv29jz1uQwBDDGy+jbg0FBg4MbRB3kgNTR/MBH1InjwE677P+nP0Mp5Ky/Zt9vasM0Xl5RwcwIDAQAB",
 }
