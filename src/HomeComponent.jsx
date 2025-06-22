@@ -1,18 +1,27 @@
-import React, {useEffect, useState} from 'react';
-function HomeComponent(){
+import React from 'react';
 
-	return(
-		<>
-		<br/>
-		<br/>
-		<label style={{ fontFamily: "Monospace"}} >
-  <input type="radio" name="activationKey" class="cursor-pointer p-2 rounded"/>&nbsp;turn on
-  &nbsp;
-  &nbsp;
-  <input type="radio" name="activationKey" class="cursor-pointer p-2 rounded"/>&nbsp;turn off
-</label>
-
-		</>
-		);
+function HomeComponent() {
+  return (
+    <>
+      <br />
+      <br />
+      <label style={{ fontFamily: "monospace" }}>
+        <input
+          type="radio"
+          name="activationKey"
+          className="cursor-pointer p-2 rounded"
+        />
+        &nbsp;turn on
+        &nbsp;&nbsp;
+        <input
+          type="radio"
+          name="activationKey"
+          className="cursor-pointer p-2 rounded"
+        />
+        &nbsp;turn off
+      </label>
+    </>
+  );
 }
+
 export default HomeComponent;
