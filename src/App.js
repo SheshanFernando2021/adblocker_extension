@@ -4,7 +4,7 @@ function App() {
   return (
     <>
       <h1 className="text-2xl font-bold">Ad Blocker</h1>
-      <p>♥ Made With Love ♥</p>
+      <p>♥ Fatto con amore ♥</p>
       <HomeComponent/>
     </>
   );

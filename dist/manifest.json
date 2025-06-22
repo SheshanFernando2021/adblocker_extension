@@ -1,6 +1,9 @@
 {
     "version": "1.0.0",
     "manifest_version": 3,
+    "permissions": [
+    "storage"
+  ],
     "name": "AdBlocker Extension",
     "description": "Made by Sheshan ♥.",
     "action": {
