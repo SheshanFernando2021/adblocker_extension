@@ -1,19 +1,13 @@
 import React, { useEffect, useState } from "react";
 import './home.css'
+
 function HomeComponent() {
   const [activationKey, setActivationKey] = useState("off");
+  const [showSettings, setShowSettings] = useState(false);
   const [enterName, setEnterName] = useState("guest Name");
-  // useEffect(() => {
-  //   chrome.storage.local.get(["activationKey"], (result) => {
-  //     if (result.activationKey) {
-  //       setActivationKey(result.activationKey);
-  //     }
-  //   });
-  // }, []);
-
 
   // per recuperare lo State dal local storage del chrome.
-useEffect(() => {
+  useEffect(() => {
     if (window.chrome && chrome.storage && chrome.storage.local) {
       chrome.storage.local.get(["activationKey"], (result) => {
         if (result.activationKey) {
@@ -23,17 +17,8 @@ useEffect(() => {
     }
   }, []);
 
-  // useEffect(() => {
-  // 	chrome.storage.local.get(["userName"]).then(data => {
-  // 		setEnterName(data.userName === undefined ? "guest user" : data.userName);
-  // 	});
-  // },[]);
-
-
-
-// per recuperare il nome dell'utente. 
-
-useEffect(() => {
+  // per recuperare il nome dell'utente.
+  useEffect(() => {
     if (window.chrome && chrome.storage && chrome.storage.local && chrome.storage.local.get) {
       chrome.storage.local.get(["userName"], (result) => {
         setEnterName(result.userName === undefined ? "guest user" : result.userName);
@@ -41,29 +26,14 @@ useEffect(() => {
     }
   }, []);
 
-
-
-  // function handleChange(event) {
-  //   const value = event.target.value;
-  //   setActivationKey(value);
-  //   chrome.storage.local.set({ activationKey: value });
-  // }
-
   // salvare il cambiamento dello stato
- function handleChange(event) {
+  function handleChange(event) {
     const value = event.target.value;
     setActivationKey(value);
     if (window.chrome && chrome.storage && chrome.storage.local) {
       chrome.storage.local.set({ activationKey: value });
     }
   }
-
-  // const handleSetName = (e) =>{
-  // 	const valueName = e.target.value;
-  // 	setEnterName(valueName);
-  // 	chrome.storage.local.set({userName : valueName});
-  // }
-
 
   // impostare il nome dell'utente
   const handleSetName = (e) => {
@@ -73,6 +43,7 @@ useEffect(() => {
       chrome.storage.local.set({ userName: valueName });
     }
   };
+
   return (
     <div className="home-container">
       <div className="radio-group">
@@ -96,10 +67,44 @@ useEffect(() => {
           />
           Turn off
         </label>
-        <br/>
+        <br />
 
-        enter name
-        <input type="text"/>
+        {showSettings && (
+          <>
+            <div className="nametext">enter name</div>
+            <input
+              type="text"
+              value={enterName}
+              onChange={handleSetName}
+              className="nameinput"
+            />
+          </>
+        )}
+
+        {!showSettings && (
+          <div
+            style={{ cursor: "pointer", color: "blue", marginTop: "0.5rem" }}
+            onClick={() => setShowSettings(!showSettings)}
+          >
+            <p className="settings">Settings</p>
+          </div>
+        )}
+
+        {showSettings && (
+          <div
+            style={{
+              cursor: "pointer",
+              color: "blue",
+              marginTop: "0.5rem",
+              fontSize: "13px",
+            }}
+            onClick={() => setShowSettings(!showSettings)}
+          >
+            close
+          </div>
+        )}
+
+        {!showSettings && <div className="nametext">Welcome back {enterName} !</div>}
       </div>
     </div>
   );

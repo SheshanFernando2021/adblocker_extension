@@ -6,7 +6,7 @@
   .container {
     @apply p-4 text-center;
     min-width: 15rem;
-    min-height: 15rem;
+    min-height: 20rem;
     max-width: 15rem;
     max-height: 15rem;
     font-family: cursive;
